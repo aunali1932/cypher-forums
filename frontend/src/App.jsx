@@ -1,6 +1,6 @@
 import './App.css';
-
 import React from 'react';
+import Header from './components/Header'; // Import Header component
 
 const posts = [
   {
@@ -21,16 +21,6 @@ const posts = [
   },
   // Add more posts here
 ];
-
-const Header = () => (
-  <header className="bg-white shadow-sm py-4 px-6 flex justify-between items-center">
-    <div className="text-2xl font-bold text-red-600">1Hack</div>
-    <div>
-      <button className="mr-4 text-blue-600 hover:underline">Login</button>
-      <button className="bg-blue-600 text-white px-4 py-2 rounded">Sign Up</button>
-    </div>
-  </header>
-);
 
 const Post = ({ post }) => (
   <div className="border-b py-4 flex items-center justify-between">
@@ -64,11 +54,10 @@ const Home = () => (
 function App() {
   return (
     <div>
-      <Header />
+      <Header />  {/* Header component is now imported and used */}
       <Home />
     </div>
   );
 }
 
 export default App;
-
