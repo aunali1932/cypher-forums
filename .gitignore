@@ -1,0 +1,132 @@
+# =====================
+# General
+# =====================
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# =====================
+# Python/Django
+# =====================
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Django stuff:
+*.sqlite3
+db.sqlite3
+
+# Media and static files
+media/
+staticfiles/
+
+# Virtual environments
+venv/
+ENV/
+env/
+.venv/
+.env/
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# PyCharm
+.idea/
+
+# VS Code
+.vscode/
+
+# =====================
+# Node.js/React
+# =====================
+
+# Dependencies
+node_modules/
+
+# Production build
+build/
+dist/
+
+# Temporary folders
+temp/
+tmp/
+
+# Next.js build
+.next/
+
+# Create React App build
+build/
+
+# Gatsby files
+.cache/
+public/
+
+# Parcel-bundler cache
+.cache/
+
+# SvelteKit build
+.svelte-kit/
+
+# Storybook build outputs
+storybook-static/
+
+# Misc
+*.pem
+
+# =====================
+# MongoDB
+# =====================
+
+# MongoDB data files (if stored locally)
+data/
+dump/
+
+# MongoDB backup files
+backups/
+
+# =====================
+# Editor/IDE Specific
+# =====================
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# IntelliJ
+*.iml
+*.ipr
+*.iws
+.idea/
+
+# Other editors
+*.swp
+*.swo
+*.swn
+
+# =====================
+# Optional: Custom Ignore Rules
+# =====================
+
+# Add any additional directories or files you want to ignore below
+
