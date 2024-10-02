@@ -10,18 +10,18 @@ const Header = () => {
         <img src={logo} alt="Logo" className="h-16 w-auto" /> {/* Adjusted logo size */}
         {/* Change the color scheme of "TOGETHER 'WE' LEARN" */}
         <span className="text-2xl font-bold">
-          <span className="text-[#08D4B4]">TOGETHER</span>{' '}
-          <span className="text-[#18141C]">'WE'</span>{' '}
-          <span className="text-[#08D4B4]">LEARN</span>
+          <span className="text-[#18141C]">TOGETHER</span>{' '}
+          <span className="text-[#08D4B4]">'WE'</span>{' '}
+          <span className="text-[#18141C]">LEARN</span>
         </span>
       </div>
 
       {/* Center: Navigation */}
       <nav className="flex flex-1 justify-end space-x-3 text-gray-700">
-        <a href="#" className="hover:underline">HELP</a>
-        <a href="#" className="hover:underline">FAQ</a>
+        <button href="#" className="hover:underline">HELP</button>
+        <button href="#" className="hover:underline">FAQ</button>
         <span>-</span>
-        <a href="#" className="hover:underline">
+        <a href="https://x.com/CyanoMeme" className="hover:underline">
           memes <span role="img" aria-label="frog">🐸</span><span role="img" aria-label="skull">💀</span>
         </a>
       </nav>
