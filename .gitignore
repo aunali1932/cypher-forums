@@ -47,6 +47,7 @@ env/
 .venv/
 .env/
 venv-cypher/
+env-cypher/
 
 # Installer logs
 pip-log.txt
