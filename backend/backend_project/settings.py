@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'users',
     'rest_framework',
     'rest_framework_simplejwt',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -51,6 +52,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 
@@ -150,3 +152,6 @@ AUTH_USER_MODEL = 'users.User'
 SIMPLE_JWT = {
     'USER_ID_FIELD': 'userid',  # This should match your primary key field in the User model
 }
+
+CORS_ALLOW_ALL_ORIGINS = True
+
