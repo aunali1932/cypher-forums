@@ -1,7 +1,11 @@
 import './App.css';
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header'; // Import Header component
+import FAQ from './pages/Faq'; // Import FAQ component (assuming you have created it)
+//import Home from './Pages/Home'; // Move Home to a separate file (e.g., Home.jsx)
 
+// Static posts data for the Home page
 const posts = [
   {
     id: 1,
@@ -22,6 +26,7 @@ const posts = [
   // Add more posts here
 ];
 
+// Post component for displaying individual posts
 const Post = ({ post }) => (
   <div className="border-b py-4 flex items-center justify-between">
     <div>
@@ -40,7 +45,8 @@ const Post = ({ post }) => (
   </div>
 );
 
-const Home = () => (
+// Main Home component
+const HomePage = () => (
   <div className="bg-gray-50 min-h-screen py-8 px-6">
     <h2 className="text-2xl font-bold mb-6">Latest Posts</h2>
     <div className="bg-white rounded-lg shadow p-6">
@@ -53,10 +59,21 @@ const Home = () => (
 
 function App() {
   return (
-    <div>
-      <Header />  {/* Header component is now imported and used */}
-      <Home />
-    </div>
+    <Router>
+      <div>
+        {/* The Header is always visible at the top */}
+        <Header />
+
+        {/* The pages are rendered below the header */}
+        <div className="container mx-auto mt-6">
+          <Routes>
+            <Route path="/" element={<HomePage />} /> {/* Default Home Page */}
+            <Route path="/faq" element={<FAQ />} /> {/* FAQ Page */}
+            {/* You can add more routes here as needed */}
+          </Routes>
+        </div>
+      </div>
+    </Router>
   );
 }
 
