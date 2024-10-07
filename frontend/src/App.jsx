@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header'; // Import Header component
 import FAQ from './pages/Faq'; // Import FAQ component (assuming you have created it)
 //import Home from './Pages/Home'; // Move Home to a separate file (e.g., Home.jsx)
+import ProfilePage from './pages/ProfilePage'; // Import FAQ component (assuming you have created it)
 
 // Static posts data for the Home page
 const posts = [
@@ -69,6 +70,7 @@ function App() {
           <Routes>
             <Route path="/" element={<HomePage />} /> {/* Default Home Page */}
             <Route path="/faq" element={<FAQ />} /> {/* FAQ Page */}
+            <Route path="/profile" element={<ProfilePage />} />
             {/* You can add more routes here as needed */}
           </Routes>
         </div>

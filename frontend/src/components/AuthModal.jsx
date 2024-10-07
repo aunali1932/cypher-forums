@@ -30,7 +30,7 @@ const AuthModal = ({ isSignUp, toggleModal, toggleSignUp, setIsLoggedIn, setUser
         },
         body: JSON.stringify(payload),
       });
-
+      
       if (response.ok) {
         setSuccessMessage('Sign up successful! Please log in.');
         setUsername('');
@@ -61,10 +61,14 @@ const AuthModal = ({ isSignUp, toggleModal, toggleSignUp, setIsLoggedIn, setUser
         },
         body: JSON.stringify(payload),
       });
-
       if (response.ok) {
+        const data = await response.json(); // Parse the JSON response
+        const accessToken = data.access; // Extract the 'access' token
+        localStorage.setItem('accessToken', accessToken);
+        localStorage.setItem('refreshToken', data.refresh);
         setIsLoggedIn(true);
-        setUserEmail(email);
+        localStorage.setItem('userEmail', email);
+        //setUserEmail(email);
         setSuccessMessage('Login successful!');
         toggleModal();
       } else {
