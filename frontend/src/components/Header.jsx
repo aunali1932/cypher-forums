@@ -7,7 +7,11 @@ import SearchBar from './SearchBar';
 import Menu from './Menu';
 import AuthModal from './AuthModal';
 
+
+
 const Header = () => {
+
+
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isSignUp, setIsSignUp] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
@@ -66,6 +70,8 @@ const Header = () => {
           toggleModal={toggleModal}
           toggleSearch={toggleSearch}
           toggleMenu={toggleMenu}
+          setIsLoggedIn = {setIsLoggedIn}
+          setUserEmail = {setUserEmail}
         />
       </header>
 
