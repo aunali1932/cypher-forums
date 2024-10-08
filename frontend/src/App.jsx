@@ -49,7 +49,14 @@ const Post = ({ post }) => (
 // Main Home component
 const HomePage = () => (
   <div className="bg-gray-50 min-h-screen py-8 px-6">
-    <h2 className="text-2xl font-bold mb-6">Latest Posts</h2>
+        <div className="flex justify-between items-center mb-6">
+      <h2 className="text-2xl font-bold">Latest Posts</h2>
+      
+      {/* +New Button */}
+      <button className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+        + New
+      </button>
+    </div>
     <div className="bg-white rounded-lg shadow p-6">
       {posts.map(post => (
         <Post key={post.id} post={post} />
