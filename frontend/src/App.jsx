@@ -1,10 +1,12 @@
 import './App.css';
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import Header from './components/Header'; // Import Header component
 import FAQ from './pages/Faq'; // Import FAQ component (assuming you have created it)
 //import Home from './Pages/Home'; // Move Home to a separate file (e.g., Home.jsx)
 import ProfilePage from './pages/ProfilePage'; // Import FAQ component (assuming you have created it)
+import NewPost from './components/NewPost';
 
 // Static posts data for the Home page
 const posts = [
@@ -47,23 +49,33 @@ const Post = ({ post }) => (
 );
 
 // Main Home component
-const HomePage = () => (
-  <div className="bg-gray-50 min-h-screen py-8 px-6">
-        <div className="flex justify-between items-center mb-6">
-      <h2 className="text-2xl font-bold">Latest Posts</h2>
-      
-      {/* +New Button */}
-      <button className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
-        + New
-      </button>
+const HomePage = () => {
+  const navigate = useNavigate(); // Initialize navigate function
+
+  return (
+    <div className="bg-gray-50 min-h-screen py-8 px-6">
+      {/* Header Section */}
+      <div className="flex justify-between items-center mb-6">
+        <h2 className="text-2xl font-bold">Latest Posts</h2>
+        
+        {/* +New Button */}
+        <button
+          className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+          onClick={() => navigate('/newpost')} // Navigate to NewPost page
+        >
+          + New
+        </button>
+      </div>
+
+      {/* Posts List */}
+      <div className="bg-white rounded-lg shadow p-6">
+        {posts.map(post => (
+          <Post key={post.id} post={post} />
+        ))}
+      </div>
     </div>
-    <div className="bg-white rounded-lg shadow p-6">
-      {posts.map(post => (
-        <Post key={post.id} post={post} />
-      ))}
-    </div>
-  </div>
-);
+  );
+};
 
 function App() {
   return (
@@ -78,6 +90,7 @@ function App() {
             <Route path="/" element={<HomePage />} /> {/* Default Home Page */}
             <Route path="/faq" element={<FAQ />} /> {/* FAQ Page */}
             <Route path="/profile" element={<ProfilePage />} />
+            <Route path="/newpost" element={<NewPost />} />
             {/* You can add more routes here as needed */}
           </Routes>
         </div>
